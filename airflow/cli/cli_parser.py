@@ -274,12 +274,13 @@ ARG_NUM_EXECUTIONS = Arg(
     help="The number of next execution datetimes to show",
 )
 ARG_RESPECT_CATCHUP = Arg(
-    ("-r", "--respect-catchup"),
+    ("--respect-catchup",),
+    # choices=["--respect-catchup","--no-respect-catchup"],
+    # default='--respect-catchup',
     action="store_true",
     help="Respect the DAG's catchup configuration",
 )
 
-# backfill
 ARG_MARK_SUCCESS = Arg(
     ("-m", "--mark-success"), help="Mark jobs as succeeded without running them", action="store_true"
 )
